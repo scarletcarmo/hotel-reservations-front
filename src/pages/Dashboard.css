@@ -1,0 +1,8 @@
+@import '../styles/variables.css';
+
+.dashboard-container {
+  text-align: center;
+
+  background-color: var(--color-background-dashboard);
+  color: var(--color-text-dashboard);
+}

@@ -1,0 +1,10 @@
+:root {
+  --color-background-dashboard: #335db6;
+  --color-background-home: #99a3b8;
+  --color-text-dashboard: #222;
+
+  /* Puedes definir más */
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-background: #f8f9fa;
+}

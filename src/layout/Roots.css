@@ -1,0 +1,59 @@
+/* src/layouts/Root.css */
+@import "../styles/variables.css";
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background-dashboard);
+  color: white;
+  height: 70px;
+}
+
+.navBar p {
+  margin-left: 20px;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  width: 50%;
+}
+
+.iconMenuMovil {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .navBar {
+    display: flex;
+    justify-content: center;
+  }
+  .iconMenuMovil {
+    display: flex;
+  }
+  .navbar-items {
+    display: none;
+  }
+  .navbar-items_open {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 400px;
+  }
+  .navbar-items_open a {
+    margin: 30px;
+  }
+  .navbar-items_open a:hover {
+    background-color: white;
+    opacity: 0.5;
+  }
+}

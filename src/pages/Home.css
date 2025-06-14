@@ -1,0 +1,9 @@
+@import '../styles/variables.css';
+
+.home-container {
+  text-align: center;
+  /*padding: 2rem;*/
+  background-color:  var(--color-background-home);
+  color: #333;
+}
+
