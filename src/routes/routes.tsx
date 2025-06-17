@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
+import { Outlet, Link } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {

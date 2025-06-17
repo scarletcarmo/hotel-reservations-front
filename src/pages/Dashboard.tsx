@@ -3,10 +3,12 @@ import './Dashboard.css';
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-container">
-      <h1>Dashboard</h1>
-      <p>Esta es la vista del Dashboard</p>
-      <Link to="/">Volver al Home</Link>
+    <div className="home-container">
+      <div className="home-content">
+        <h1>Bienvenido a Nuestro Sistema</h1>
+        <p>Gestiona tus reservas, ofertas y mucho más desde un solo lugar.</p>
+        <button className="home-button">Explorar</button>
+      </div>
     </div>
   );
 };

@@ -57,3 +57,20 @@
     opacity: 0.5;
   }
 }
+
+/* Estructura general */
+html, body, #root, .root-layout {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido debe crecer y ocupar el resto del espacio */
+.main-content {
+  flex: 1;
+  padding-top: 1rem;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
