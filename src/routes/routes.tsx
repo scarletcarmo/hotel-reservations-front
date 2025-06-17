@@ -2,8 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../layout/Root";
 import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
-import { Outlet, Link } from "react-router-dom";
-
+import Building from "../pages/Building";
+import Reservations from "../pages/Reservations";
+import Oferts from "../pages/Offerts";
 
 const router = createBrowserRouter([
   {
@@ -18,13 +19,18 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
       },
-      /*{
-        path: "rooms/:id",
-        element: <Show />,
-        loader: async ({ params }) => {
-          return db.loadShow(params.id!);
-        },
-      },*/
+      {
+        path: "/building",
+        element: <Building />,
+      },
+      {
+        path: "/reservations",
+        element: <Reservations />,
+      },
+      {
+        path: "/offers",
+        element: <Oferts />,
+      },
     ],
   },
 ]);
@@ -32,4 +38,3 @@ const router = createBrowserRouter([
 export default function AppRouter() {
   return <RouterProvider router={router} />;
 }
-

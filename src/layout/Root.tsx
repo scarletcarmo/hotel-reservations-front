@@ -23,8 +23,8 @@ const Root = () => {
           <Link to="/">HOME</Link>
           <Link to="/dashboard">DASHBOARD</Link>
           <Link to="/reservations">MIS RESERVAS</Link>
-          <Link to="/ofert">OFERTAS</Link>
-          <Link to="/next">PRÓXIMAMENTE</Link>
+          <Link to="/offers">OFERTAS</Link>
+          <Link to="/building">PRÓXIMAMENTE</Link>
           <Link to="/logout">LOGOUT</Link>
         </nav>
       </header>

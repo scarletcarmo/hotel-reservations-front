@@ -1,7 +1,45 @@
-@import '../styles/variables.css';
+/* Dashboard.css */
 
 .dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Pantalla completa */
+  background: var(--color-background);
+  color: white;
+  font-family: "Arial", sans-serif;
+}
+
+.dashboard-content {
   text-align: center;
+  background-color: var(--color-primary);
+  padding: 40px;
+  border-radius: 20px;
+  /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);*/
+}
 
+.dashboard-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
+.dashboard-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.dashboard-button {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard-button:hover {
+  background-color: #05165a;
+  color: #ffffff;
 }
