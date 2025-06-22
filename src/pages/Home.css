@@ -34,3 +34,32 @@
 .home-container a:hover {
   background-color: #0056b3;
 }
+
+.home-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-container input {
+  padding: 0.5rem;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.home-container button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-container button:hover {
+  background-color: #0056b3;
+  color: white;
+}
