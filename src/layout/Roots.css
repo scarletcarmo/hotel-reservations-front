@@ -22,6 +22,16 @@
   width: 50%;
 }
 
+.navbar-items a {
+  text-decoration: none;
+  color: var(--color-background);
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar-items a:hover {
+  color: var(--color-background-home);
+}
+
 .iconMenuMovil {
   display: none;
 }
@@ -59,7 +69,10 @@
 }
 
 /* Estructura general */
-html, body, #root, .root-layout {
+html,
+body,
+#root,
+.root-layout {
   height: 100%;
   margin: 0;
   padding: 0;
