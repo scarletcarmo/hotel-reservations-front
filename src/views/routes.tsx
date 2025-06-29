@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Building from "../pages/Building";
 import Reservations from "../pages/Reservations";
 import Oferts from "../pages/Offerts";
+import UsersList from "./users/List/usersLists";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/offers",
         element: <Oferts />,
       },
+      {
+        path: "/users/list",
+        element: <UsersList/>
+      }
     ],
   },
 ]);

@@ -1,10 +1,12 @@
 // src/components/UsersList.tsx
-import React, { useEffect, useState } from 'react';
-import { fetchUsers } from '../../../api/usersApi';
+import React, { useEffect, useState } from "react";
+import { getUsers } from "../../../api/userApi";
 
 interface User {
   id: number;
-  name: string;
+  username: string;
+  email: string;
+  role_id: string;
 }
 
 const UsersList: React.FC = () => {
@@ -12,17 +14,23 @@ const UsersList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchUsers()
-      .then(setUsers)
-      .catch(() => setError('No se pudieron cargar los usuarios'));
+    async function fetchData() {
+      try {
+        const response = await getUsers();
+        setUsers(response.data);
+      } catch {
+        setError("Error al cargar la data");
+      }
+    }
+    fetchData();
   }, []);
 
   if (error) return <div>{error}</div>;
 
   return (
     <ul>
-      {users.map(user => (
-        <li key={user.id}>{user.name}</li>
+      {users.map((user) => (
+        <li key={user.id}>{user.username}</li>
       ))}
     </ul>
   );
