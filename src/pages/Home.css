@@ -7,7 +7,7 @@
   justify-content: center;
   height: 100vh; /* Pantalla completa */
   background-color: var(--color-background);
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: black;
   text-align: center;
 }
@@ -61,5 +61,20 @@
 
 .home-container button:hover {
   background-color: #0056b3;
+  color: white;
+}
+
+.home-container .btn-outline {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-container .btn-outline:hover {
+  background-color: #007bff;
   color: white;
 }

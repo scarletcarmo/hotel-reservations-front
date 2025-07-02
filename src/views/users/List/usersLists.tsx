@@ -1,16 +1,11 @@
 // src/components/UsersList.tsx
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../../../api/userApi";
+import TblInformation from "../../../components/TblInformation";
+import { UserModel } from "../../../models/userModel";
 
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  role_id: string;
-}
-
-const UsersList: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
+const UsersList = () => {
+  const [users, setUsers] = useState<UserModel[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -28,11 +23,9 @@ const UsersList: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <ul>
-      {users.map((user) => (
-        <li key={user.id}>{user.username}</li>
-      ))}
-    </ul>
+    <div>
+      <TblInformation users={users} />
+    </div>
   );
 };
 

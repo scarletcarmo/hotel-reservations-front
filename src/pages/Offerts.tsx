@@ -1,4 +1,3 @@
-import CardInformation from "../components/CardInformation";
 import Filter from "../components/Filter";
 import "./Offerts.css";
 
@@ -10,7 +9,7 @@ const Offerts = () => {
         <div className="offerts-list">
           <Filter />
         </div>
-        <CardInformation/>
+       { /*<CardInformation/>*/}
       </div>
     </div>
   );

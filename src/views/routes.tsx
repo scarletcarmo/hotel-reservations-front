@@ -6,6 +6,8 @@ import Building from "../pages/Building";
 import Reservations from "../pages/Reservations";
 import Oferts from "../pages/Offerts";
 import UsersList from "./users/List/usersLists";
+import UsersPost from "./users/post/usersPost";
+import UserDetails from "./users/details/userDetails";
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/users/list",
-        element: <UsersList/>
-      }
+        element: <UsersList />,
+      },
+      {
+        path: "/users/details",
+        element: <UserDetails />,
+      },
+      {
+        path: "/register",
+        element: <UsersPost />,
+      },
     ],
   },
 ]);
