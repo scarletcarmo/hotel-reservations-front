@@ -40,3 +40,19 @@ export async function post(user: any): Promise<UserResponse> {
         throw error;
     }
 }
+
+export async function put(user: any): Promise<UserResponse> {
+    try {
+        const response = await api.put<UserResponse>(`/users/${user.id}`, user);
+        return response.data;
+
+    } catch (error) {
+        console.error('Error al actualizar el usuario:', error);
+        throw error;
+    }
+}
+
+export async function deleteUser(id: string): Promise<UserResponse> {
+    const response = await api.delete<UserResponse>(`/${id}`);
+    return response.data
+}

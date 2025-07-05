@@ -8,6 +8,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import useUserForm from "../../../hooks/useUserForm";
+import { useNavigate } from "react-router-dom";
 
 interface FormData {
   username: "";
@@ -22,7 +23,8 @@ const UsersPost = () => {
     email: "",
     role_id: 0,
   });
-
+  //para navegar
+  
   return (
     <form onSubmit={onSubmit}>
       <Typography variant="h6" gutterBottom>

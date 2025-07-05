@@ -24,8 +24,9 @@ const CardInformation = () => {
         <CardMedia component="img" height="194" image="/logo.png" alt="Logo" />
         <CardContent>
           <Typography
-            variant="body2"
+            variant="h5"
             sx={{ fontWeight: "bold", color: "text.primary" }}
+            
           >
             ¿Qué buscas cuando reservas un hotel?
           </Typography>
