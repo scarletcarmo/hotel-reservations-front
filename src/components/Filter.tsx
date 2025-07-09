@@ -73,8 +73,6 @@ const Filter = () => {
 interface Place {
   title: string;
 }
-const Places: Place[] = places;
-
-console.log(Places);
+//const Places: Place[] = places;
 
 export default Filter;

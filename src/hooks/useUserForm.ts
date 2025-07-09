@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
-import { UserResponse } from '../models/userModel';
 import { post } from '../api/userApi';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 export function useUserForm<T>(initialForm: T) {
     const [formData, setFormData] = useState(initialForm);
-    const navigate = useNavigate();
-
+    //const navigate = useNavigate();
     useEffect(() => {
-        console.log('formState actualizado:', formData);
     }, [formData]);
 
     //devuelve el value del input
@@ -20,7 +17,7 @@ export function useUserForm<T>(initialForm: T) {
         }));
     }
     //envia los valores del formulario
-    const onSubmit = async (e: any) => {
+    /*const onSubmit = async (e: any) => {
         //evita que el formulario se envíe y que la página se recargue
         e.preventDefault();
         try {
@@ -36,15 +33,40 @@ export function useUserForm<T>(initialForm: T) {
         } catch (error) {
             console.error("Error al crear el usuario:", error);
         }
-    };
+    };*/
 
     const onResetForm = () => {
         setFormData(initialForm);
     }
 
+    const postUser = async (e: any) => {
+        //evita que el formulario se envíe y que la página se recargue
+        e.preventDefault();
+        const response = await post(formData);
+        console.log("response-useHook", response);
+        try {
+            if (response.code === 200) {
+                //navigate("/users/list");
+                console.log("todo oki");
+                return true;
+            } else {
+                return false;
+            }
+        } catch (error) {
+            console.error("Error al crear el usuario:", error);
+            return false;
+        }
+    }
+
+    const put = async (e: any) => {
+        //evita que el formulario se envíe y que la página se recargue
+        e.preventDefault();
+    }
+
     return {
         formData,
-        onSubmit,
+        postUser,
+        put,
         onChange,
         onResetForm,
     };

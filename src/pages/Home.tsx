@@ -17,10 +17,8 @@ const Home = () => {
   const handleLogin = async (e: any) => {
     e.preventDefault();
     try {
-      await login(email, password); // llama al login del contexto
+      await login(email, password); 
       alert("Login exitoso ");
-      // Puedes redirigir, si quieres:
-      // window.location.href = '/dashboard';
     } catch (err) {
       setError("Correo o contraseña incorrectos ");
     }

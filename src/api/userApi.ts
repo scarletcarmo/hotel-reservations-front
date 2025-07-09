@@ -1,7 +1,7 @@
 // src/api.ts
 import { config } from '../config/config';
 import axios from 'axios';
-import { UserResponse } from '../models/userModel';
+//import { UserResponse } from '../models/userModel';
 
 //Obtener token
 const token = localStorage.getItem('token');
@@ -27,13 +27,11 @@ export async function getUsers() {
     }
 }
 
-export async function post(user: any): Promise<UserResponse> {
+export async function post(user: any) {
     try {
-        const response = await api.post<UserResponse>('/users', user);
-        console.log("response.data", response.data);
+        const response = await api.post('/users', user)
         return response.data;
     } catch (error) {
-        console.error("Error al crear el usuario:", error);
         if (error.response) {
             console.error("Respuesta del servidor:", error.response);
         }
@@ -41,9 +39,9 @@ export async function post(user: any): Promise<UserResponse> {
     }
 }
 
-export async function put(user: any): Promise<UserResponse> {
+export async function put(user: any) {
     try {
-        const response = await api.put<UserResponse>(`/users/${user.id}`, user);
+        const response = await api.put(`/users/${user.id}`, user);
         return response.data;
 
     } catch (error) {
@@ -52,7 +50,7 @@ export async function put(user: any): Promise<UserResponse> {
     }
 }
 
-export async function deleteUser(id: string): Promise<UserResponse> {
-    const response = await api.delete<UserResponse>(`/${id}`);
+export async function deleteUser(id: string) {
+    const response = await api.delete(`/${id}`);
     return response.data
 }

@@ -1,14 +1,7 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  TextField,
-  Typography,
-  Select,
-  MenuItem,
-} from "@mui/material";
+import { Button, FormControl, TextField, Typography } from "@mui/material";
 import useUserForm from "../../../hooks/useUserForm";
-import { useNavigate } from "react-router-dom";
+import { Snackbar, Alert } from "@mui/material";
+import { useState } from "react";
 
 interface FormData {
   username: "";
@@ -17,14 +10,28 @@ interface FormData {
   role_id: 0;
 }
 const UsersPost = () => {
-  const { formData, onChange, onSubmit, onResetForm } = useUserForm<FormData>({
+  const { formData, onChange, postUser } = useUserForm<FormData>({
     username: "",
     password: "",
     email: "",
     role_id: 0,
   });
   //para navegar
-  
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+
+  const onSubmit = async (e: React.FormEvent) => {
+    const success = await postUser(e);
+    console.log("componente", success);
+    
+    if (success) {
+      setSnackbarMessage("Usuario creado exitosamente");
+    } else {
+      setSnackbarMessage("Hubo un error al crear el usuario");
+    }
+    setOpenSnackbar(true);
+  };
+
   return (
     <form onSubmit={onSubmit}>
       <Typography variant="h6" gutterBottom>
@@ -59,7 +66,20 @@ const UsersPost = () => {
           required
         />
       </FormControl>
-
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={() => setOpenSnackbar(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setOpenSnackbar(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
       {/*<FormControl fullWidth margin="normal">
         <FormLabel component="legend">Rol</FormLabel>
         <Select name="rol" value={formData.rol} onChange={onChange} required>
@@ -72,9 +92,9 @@ const UsersPost = () => {
       <Button type="submit" variant="contained" color="primary">
         Enviar
       </Button>
-      <button type="button" onClick={onResetForm}>
+      {/*<button type="button" onClick={onResetForm}>
         Limpiar formulario
-      </button>
+      </button>*/}
     </form>
   );
 };
